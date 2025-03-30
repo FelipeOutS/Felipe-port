@@ -1,0 +1,2107 @@
+:root {
+    --background-dark: rgb(28, 28, 28);
+    --text-dark: white;
+    --background-light: white;
+    --text-light: #000;
+    /* ou outra cor preta que você deseja */
+    --btn-background-dark: #FFC371;
+    --btn-text-dark: white;
+    --btn-hover-shadow-dark: 0px 0px 8px #740808;
+    --menu-background-dark: #000;
+    --menu-background-light: #f8f9fa;
+    --form-input-background-dark: #242424;
+    --form-input-text-dark: #fff;
+    --form-input-background-light: #ddd;
+    --form-input-text-light: #000;
+    --overlay-menu-background-dark: #000000a7;
+    --overlay-menu-background-light: rgba(255, 255, 255, 0.7);
+    --btn-background-dark: #FFC371;
+    /* Cor vermelha usada no site */
+    --background-light-gray: #f2f2f2;
+    /* Exemplo de cor cinza claro */
+}
+
+body {
+    background-color: var(--background-dark);
+    color: var(--text-dark);
+    height: 100vh;
+}
+
+
+[data-theme="light"] {
+    background-color: var(--background-light);
+    color: var(--text-light);
+}
+
+[data-theme="light"] {
+    --text-dark: var(--text-light);
+    /* Sobrescreve a cor do texto para usar a cor clara */
+}
+
+/* Ajustando as cores de texto para o modo claro */
+[data-theme="light"] .txt-topo-site h1,
+[data-theme="light"] .txt-topo-site span,
+/* Se você tiver elementos span que precisam da cor alterada */
+[data-theme="light"] .topo-do-site .txt-topo-site p {
+    color: var(--text-light);
+    /* Definindo a cor do texto para preto (ou a cor especificada em --text-light) */
+}
+
+[data-theme="light"] .especiliadades {
+    background-color: var(--background-light-gray);
+    /* Usa a cor cinza claro definida */
+}
+
+/* Cor de fundo cinza claro para o header no modo light */
+[data-theme="light"] header {
+    background-color: #f2f2f2;
+    /* Um cinza claro */
+}
+
+/* Cor de fundo claro para a seção portfolio no modo light */
+[data-theme="light"] .portfolio {
+    background-color: #f2f2f2;
+    /* Um cinza claro */
+}
+
+/* Adaptação para o tema claro */
+[data-theme="light"] #fourth .border {
+    border-color: black;
+    /* Cor das bordas para o modo claro */
+}
+
+/* Cor de fundo claro para a seção footer no modo light */
+[data-theme="light"] footer {
+    background-color: #f2f2f2;
+    /* Um cinza claro */
+}
+
+/* Define a cor do texto dos links do menu no modo light */
+[data-theme="light"] nav ul li a {
+    color: var(--text-light);
+    /* Define a cor do texto para preto no modo claro */
+}
+
+/* Adiciona efeito hover nos links do menu no modo light, mudando a cor para vermelho */
+[data-theme="light"] nav ul li a:hover {
+    color: var(--btn-background-dark);
+    /* Muda a cor para vermelho no hover */
+}
+
+/* Altera a cor do texto para preto no menu mobile quando o tema light está ativo */
+[data-theme="light"] .menu-mobile nav ul li a {
+    color: #000;
+    /* Cor preta para o texto */
+}
+
+/* Altera a cor do texto e do ícone do e-mail no rodapé para o modo claro */
+[data-theme="light"] .line-footer.borda p,
+[data-theme="light"] .line-footer.borda p a,
+[data-theme="light"] .line-footer.borda p i {
+    color: var(--text-light);
+    /* Define a cor do texto para preto (ou qualquer cor definida em --text-light) no modo claro */
+}
+
+[data-theme="light"] .txt-topo-site,
+[data-theme="light"] .especialidades-box,
+[data-theme="light"] .txt-sobre,
+[data-theme="light"] .txt-topo-site h1,
+[data-theme="light"] .txt-topo-site p,
+[data-theme="light"] .txt-topo-site span [data-theme="light"] .topo-do-site .txt-topo-site p,
+[data-theme="light"] h1,
+[data-theme="light"] h2,
+[data-theme="light"] h3,
+[data-theme="light"] p {
+    color: var(--text-dark);
+    /* Isso deve aplicar a cor preta quando no tema claro */
+}
+
+/* Corrigindo a aplicação das cores do modo claro */
+[data-theme="light"] {
+    --btn-background-dark: #FFC371;
+    /* Cor do botão no modo claro */
+    --menu-background-dark: var(--menu-background-light);
+    /* Cor de fundo do menu no modo claro */
+    --form-input-background-dark: var(--form-input-background-light);
+    /* Cor de fundo dos inputs no modo claro */
+    --form-input-text-dark: var(--form-input-text-light);
+    /* Cor do texto dos inputs no modo claro */
+    --overlay-menu-background-dark: var(--overlay-menu-background-light);
+    /* Cor de fundo do overlay do menu no modo claro */
+}
+
+/*ESTILO GERAL*/
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+.interface {
+    max-width: 1280px;
+    margin: 0 auto;
+}
+
+.flex {
+    display: flex;
+}
+
+
+h2.titulo {
+    color: var(--text-dark);
+    font-size: 38px;
+    text-align: center;
+}
+
+h2.titulo span {
+    color: var(--btn-background-dark);
+}
+
+/*ESTILO DO CABEÇALHO*/
+
+header {
+    padding: 40px 4%;
+}
+
+header .interface {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+header a {
+    color: rgb(171, 171, 171);
+    text-decoration: none;
+    display: inline-block;
+    transition: .2s;
+}
+
+header nav.menu-desktop a:hover {
+    color: white;
+    transform: scale(1.05);
+}
+
+header nav.menu-desktop ul {
+    list-style-type: none;
+}
+
+header nav.menu-desktop ul li {
+    display: inline-block;
+    padding: 0 40px;
+}
+
+/*ESTILO DO MENU MOBILE*/
+
+.btn-abrir-menu i {
+    color: #B71515;
+    font-size: 40px;
+}
+
+.btn-abrir-menu {
+    display: none;
+}
+
+.menu-mobile {
+    background-color: #000;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    right: 0;
+    z-index: 99999;
+    width: 0%;
+    overflow: hidden;
+    transition: .5;
+}
+
+.menu-mobile.abrir-menu {
+    width: 70%;
+}
+
+.menu-mobile.btn-abrir-menu ˜ .overlay-menu {
+    display: block;
+}
+
+
+.menu-mobile .btn-fechar {
+    padding: 20px 5%;
+}
+
+.menu-mobile .btn-fechar i {
+    color: #9d6415;
+    font-size: 30px;
+}
+
+.menu-mobile nav ul {
+    text-align: right;
+}
+
+.menu-mobile nav ul li a {
+    color: #fff;
+    font-size: 20px;
+    font-weight: 300;
+    padding: 20px 4%;
+    display: block;
+}
+
+.menu-mobile nav ul li a:hover {
+    background-color: #9d6415;
+
+}
+
+/* Certifique-se que as variáveis de cor estejam sendo usadas corretamente em todo o CSS */
+.menu-mobile,
+.overlay-menu {
+    background-color: var(--menu-background-dark);
+}
+
+form input,
+form textarea {
+    background-color: var(--form-input-background-dark);
+    color: var(--form-input-text-dark);
+}
+
+.overlay-menu {
+    background-color: #000000a7;
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 88888;
+    display: none;
+}
+
+/*ESTILO DO TOPO DO SITE*/
+
+section.topo-do-site {
+    padding: 40px 4%;
+}
+
+section.topo-do-site .flex {
+    align-items: center;
+    justify-content: center;
+    gap: 90px;
+}
+
+/* Estilos básicos para o h1, você pode adicionar mais conforme necessário */
+#typing-animation {
+
+    /* Efeito do cursor de digitação */
+    font-size: 45px;
+    /* Exemplo de tamanho de fonte, ajuste como necessário */
+    overflow: hidden;
+    /* Esconde o texto que "transborda" */
+}
+
+/* Classe para o cursor de digitação */
+.typing-cursor {
+    display: inline-block;
+    /* Permite que o cursor se alinhe como texto e tenha altura e largura definidas */
+    width: 2px;
+    /* A largura do cursor, criando uma linha fina vertical */
+    height: 1em;
+    /* A altura do cursor será a mesma que a do tamanho da fonte do texto ao redor */
+    vertical-align: bottom;
+    /* Alinha a parte inferior do cursor com a parte inferior do texto circundante */
+
+    /* A cor do cursor, tornando-o visível como laranja */
+    margin-left: 2px;
+    /* Adiciona espaço à esquerda do cursor para não tocar no último caractere digitado */
+    animation: blink 11s infinite;
+    /* Ajusta a duração para 11 segundos no total, incluindo a pausa */
+    /* Aplica a animação de piscar ao cursor, que repete indefinidamente a cada segundo */
+}
+
+/* Keyframes para animação 'blink' do cursor com pausa */
+@keyframes blink {
+
+    0%,
+    10% {}
+
+    /* Cursor visível para os primeiros 10% do tempo da animação */
+    5% {
+        background-color: transparent;
+    }
+
+    /* Cursor fica transparente no ponto médio dos primeiros 10% */
+    /* De 5% até 95% do tempo, o cursor permanece transparente (o que dá uma pausa de cerca de 10 segundos) */
+    95%,
+    100% {}
+
+    /* No final da animação, o cursor fica visível novamente */
+}
+
+
+
+.topo-do-site h1 {
+    color: white;
+    font-size: 42px;
+    font-weight: bold;
+    line-height: 40px;
+    display: flex;
+    /* Isso vai centralizar verticalmente o span caso o h1 seja mais alto */
+    justify-content: flex-start;
+    /* Alinha o conteúdo do h1 ao início */
+}
+
+
+
+.topo-do-site .txt-topo-site h1 span {
+    color: #9d6415;
+    font-size: 84px;
+    font-weight: bold;
+}
+
+
+.topo-do-site .txt-topo-site p {
+    color: white;
+    margin: 40px 0px;
+}
+
+.topo-do-site .img-topo-site img {
+    position: relative;
+    animation: flutuar 2s ease-in-out infinite alternate;
+}
+
+@keyframes flutuar {
+    0% {
+        top: 0;
+    }
+
+    100% {
+        top: 30px;
+    }
+}
+
+.Download-button {
+    display: flex;
+    align-items: center;
+    font-family: inherit;
+    font-weight: 500;
+    font-size: 17px;
+    padding: 12px 20px;
+    color: white;
+    background: rgb(103, 92, 156);
+    border: none;
+    box-shadow: 0 0.7em 1.5em -0.5em rgba(59, 48, 78, 0.527);
+    letter-spacing: 0.05em;
+    border-radius: 8px;
+    cursor: pointer;
+    position: relative;
+}
+
+.Download-button svg {
+    margin-right: 8px;
+    width: 25px;
+}
+
+.Download-button:hover {
+    box-shadow: 0 0.5em 1.5em -0.5em rgba(88, 71, 116, 0.627);
+}
+
+.Download-button:active {
+    box-shadow: 0 0.3em 1em -0.5em rgba(88, 71, 116, 0.627);
+}
+
+.Download-button::before {
+    content: "";
+    width: 4px;
+    height: 40%;
+    color: white;
+    background-color: white;
+    position: absolute;
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+    left: 0;
+    transition: all 0.2s;
+}
+
+.Download-button::after {
+    color: white;
+    content: "";
+    width: 4px;
+    height: 40%;
+    background-color: white;
+    position: absolute;
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+    right: 0;
+    transition: all 0.2s;
+}
+
+.Download-button:hover::before,
+.Download-button:hover::after {
+    height: 60%;
+}
+
+
+/* ESTILO DAS ESPECIALIDADES */
+
+section.especiliadades {
+    padding: 40px 4%;
+}
+
+section.especiliadades .flex {
+    gap: 60px;
+}
+
+.especiliadades .especialidades-box {
+    color: #fff;
+    padding: 40px;
+    border-radius: 20px;
+    margin-top: 45px;
+    transition: .2s;
+
+}
+
+.especiliadades .especialidades-box:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 20px #9d6415;
+}
+
+.especiliadades .especialidades-box i {
+    font-size: 70px;
+    color: #FFC371;
+    font-weight: bold;
+}
+
+.especiliadades .especialidades-box h3 {
+    font-size: 28px;
+    margin: 15px 0;
+    font-weight: bold;
+}
+
+.titulo {
+    font-weight: bold;
+}
+
+/* SOBRE MIM*/
+
+section.sobre {
+    padding: 80px 4%;
+}
+
+section.sobre .flex {
+    align-items: center;
+    gap: 60px;
+}
+
+
+.sobre .txt-sobre {
+    color: #fff;
+}
+
+.sobre .txt-sobre h2 {
+    font-size: 40px;
+    line-height: 40px;
+    margin-bottom: 20px;
+    font-weight: bold;
+}
+
+.sobre .txt-sobre h2 span {
+    color: #FFC371;
+    font-weight: bold;
+    display: block;
+}
+
+.sobre .txt-sobre p {
+    margin: 20px 0;
+    text-align: justify;
+}
+
+/* .btn-social button {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    border: none;
+    color: #fff;
+    background-color: #B71515;
+    font-size: 22px;
+    cursor: pointer;
+    margin: 0 5px;
+    transition: .2s;
+} */
+
+/* ESTILO PORTFOLIO*/
+
+section.portfolio {
+    padding: 70px 7%;
+    box-shadow: 0 0 70px 7px #ffffff1d;
+
+}
+
+section.portfolio .flex {
+    justify-content: space-around;
+    margin-top: 80px;
+    gap: 20px;
+}
+
+.img-port {
+    width: 360px;
+    height: 460px;
+    background-size: cover;
+    background-position: 100% 0%;
+    transition: 9s;
+    cursor: pointer;
+    border-radius: 35px;
+    position: relative;
+
+}
+
+.img-port:hover {
+    background-position: 100% 100%;
+}
+
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #000000b8;
+    border-radius: 35px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 24px;
+    font-weight: 600;
+    color: #fff;
+    opacity: 0;
+    transition: .5s;
+
+}
+
+.overlay:hover {
+    opacity: 1;
+}
+
+
+/* Estilos da galeria */
+.galeria {
+    display: none;
+    /* Inicialmente oculta */
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.9);
+    padding: 30px 0;
+    /* Adiciona um pouco de espaço superior e inferior */
+}
+
+.conteudo-galeria {
+    position: relative;
+    width: auto;
+    /* Auto para ajustar ao conteúdo */
+    max-width: 960px;
+    /* Ajuste conforme necessário */
+    margin: 5% auto;
+    text-align: center;
+}
+
+/* Ajusta o tamanho da imagem principal para deixar espaço para as setas */
+.galeria img {
+    max-width: 700px;
+    /* Pode ajustar de acordo com o tamanho desejado */
+    height: auto;
+    margin: 0 auto;
+    /* Centraliza a imagem */
+}
+
+.overlay-with-button {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.overlay-with-button {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.show-textbox-btn {
+    margin-left: 10px;
+    /* Espaço entre o texto e o botão */
+    cursor: pointer;
+}
+
+/* ESTILO DO BOTAO "LEIA MAIS"*/
+
+.botao {
+    margin: 20px auto;
+    /* Variáveis */
+    --botao_radius: 0.75em;
+    --botao_color: #e8e8e8;
+    --botao_outline_color: #ffffff;
+    font-size: 17px;
+    font-weight: 400;
+    font-weight: bold;
+    border-radius: var(--botao_radius);
+    background: var(--botao_color);
+    top: 450px;
+    display: block;
+    text-align: center;
+    text-decoration: none;
+    text-transform: uppercase;
+    position: relative;
+    width: 140px;
+    /* Remove o sublinhado padrão */
+    color: var(--botao_outline_color);
+    /* Cor do texto */
+    box-sizing: border-box;
+    border: 1px solid var(--botao_outline_color);
+    padding: 1em 1em;
+    transform: translateY(-0.2em);
+    transition: transform 0.1s ease, background-color 0.1s ease;
+    /* Transição suave */
+    background: linear-gradient(45deg, #FF5F6D, #FFC371);
+    /* Gradiente de fundo */
+}
+
+.botao:hover {
+    /* Eleva o link quando passa o mouse */
+    transform: translateY(-0.33em);
+}
+
+.botao:active {
+    /* Baixa o link quando é pressionado */
+    transform: translateY(0);
+}
+
+.dialog span{
+    font-weight: bold;
+}
+
+
+.modalbg {
+    position: fixed;
+    font-family: Arial, Helvetica, sans-serif;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background: rgba(0, 0, 0, 0);
+    z-index: 99999;
+    transition: all 2s ease-out 0.2s;
+    display: block;
+    pointer-events: none;
+}
+
+.modalbg .dialog {
+    width: 400px;
+    position: relative;
+    top: -1000px;
+    margin: 10% auto;
+    padding: 5px 20px 13px 20px;
+    border-radius: 10px;
+    background: #000000;
+    /* Fallback for older browsers */
+    background: linear-gradient( #FF5F6D, #FFC371);
+    box-shadow: 0 0 10px #000;
+}
+
+.modalbg:target {
+    display: block;
+    pointer-events: auto;
+    background: rgba(4, 10, 30, .8);
+    transition: all 2s ease-out;
+}
+
+.modalbg:target .dialog {
+    top: -20px;
+    transition: all 0.8s ease-out 0.2s;
+}
+
+.close {
+    background: #606061;
+    color: #FFFFFF;
+    line-height: 25px;
+    position: absolute;
+    right: -12px;
+    text-align: center;
+    top: -10px;
+    width: 24px;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 12px;
+    box-shadow: 0 0 10px #000;
+    transition: all 0.5s ease-out 0.2s;
+}
+
+.close:hover {
+    background: #bd0527;
+    transition: all 0.5s ease-out;
+}
+
+.fineprint {
+    font-style: italic;
+    font-size: 10px;
+    color: #646;
+}
+
+a {
+    color: #333;
+    text-decoration: none;
+}
+
+/* FIM DO ESTILO DO BOTAO "LEIA MAIS"*/
+
+/* Botão de fechar */
+.close-btn {
+    color: #ffffff;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close-btn:hover,
+.close-btn:focus {
+    color: rgb(196, 8, 8);
+    text-decoration: none;
+    cursor: pointer;
+}
+
+
+.top {
+    background-color: #eee;
+    border-radius: 20px;
+    margin: 16px 0;
+    width: 260px;
+}
+
+.text {
+    box-sizing: border-box;
+    padding: 0 20px 20px;
+    width: 100%;
+}
+
+.title {
+    align-items: center;
+    display: flex;
+    font-size: 28px;
+    font-weight: bold;
+    margin-bottom: 4px;
+    position: relative;
+}
+
+.tooltip {
+    font-size: 16px;
+    font-weight: normal;
+    margin-top: 2px;
+    position: relative;
+}
+
+.tooltip:hover {
+    cursor: help;
+}
+
+.tooltip-spacing {
+    height: 20px;
+    margin: 8px;
+    position: relative;
+    width: 20px;
+}
+
+.tooltip-bg1 {
+    background-color: #000;
+    border-radius: 10px;
+    content: " ";
+    display: flex;
+    height: 20px;
+    position: absolute;
+    top: 0;
+    width: 20px;
+}
+
+.tooltip-bg2 {
+    background-color: #fff;
+    border-radius: 8px;
+    content: " ";
+    display: flex;
+    height: 16px;
+    left: 2px;
+    position: absolute;
+    top: 2px;
+    width: 16px;
+}
+
+.tooltip-text {
+    font-size: 14px;
+    font-weight: bold;
+    line-height: 20px;
+    position: relative;
+    text-align: center;
+    width: 20px;
+}
+
+.info {
+    color: #64686b;
+}
+
+.popup-bg {
+    filter: drop-shadow(0 3px 6px rgba(0, 0, 0, 0.16)) drop-shadow(0 3px 6px rgba(0, 0, 0, 0.23));
+    position: absolute;
+    top: -126px;
+}
+
+.popup-outline {
+    position: absolute;
+    top: -126px;
+}
+
+.popup-text {
+    border-radius: 12px;
+    box-sizing: border-box;
+    color: #fff;
+    font-size: 16px;
+    font-weight: normal;
+    left: 8px;
+    opacity: 0;
+    padding: 12px 16px;
+    position: absolute;
+    top: -117px;
+    transition: opacity 240ms 120ms cubic-bezier(0.4, 0, 0.2, 1);
+    width: 292px;
+}
+
+.tooltip:hover~.popup-text {
+    display: block;
+}
+
+.popup-bg {
+    opacity: 0;
+    transition: opacity 240ms 120ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.popup-outline-left {
+    stroke-dasharray: 0 426px;
+    stroke-dashoffset: 1px;
+    transition: stroke-dasharray 300ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.popup-outline-right {
+    stroke-dasharray: 352px 352px;
+    stroke-dashoffset: -352px;
+    transition: stroke-dashoffset 300ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.tooltip:hover~.popup-text {
+    opacity: 1;
+}
+
+.tooltip:hover~.popup-bg {
+    opacity: 1;
+    transition: opacity 240ms 120ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.tooltip:hover~.popup-outline .popup-outline-left {
+    stroke-dasharray: 426px 426px;
+    transition: stroke-dasharray 300ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.tooltip:hover~.popup-outline .popup-outline-right {
+    stroke-dashoffset: 0;
+    transition: stroke-dashoffset 300ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.buttons {
+    display: flex;
+    margin-top: 8px;
+    width: 100%;
+}
+
+.button {
+    align-items: center;
+    background: #edf1f7;
+    border-radius: 10px;
+    cursor: pointer;
+    display: flex;
+    height: 50px;
+    justify-content: center;
+    margin: 0 5px 28px 20px;
+    width: 100%;
+}
+
+.button:last-child {
+    margin: 0 20px 20px 5px;
+}
+
+.button-primary {
+    background-color: #0060f6;
+    color: #fff;
+}
+
+
+/* Estilização das setas */
+.navegacao {
+    display: flex;
+    justify-content: space-between;
+    position: absolute;
+    top: 50%;
+    width: 100%;
+    transform: translateY(-50%);
+}
+
+.anterior,
+.proxima {
+    font-size: 24px;
+    cursor: pointer;
+    color: white;
+    background-color: transparent;
+    border: none;
+    transition: color 0.3s;
+    /* Suaviza a transição da cor */
+}
+
+.anterior:hover,
+.proxima:hover {
+    color: #B71515;
+    /* Exemplo de alteração de cor no hover sem causar movimento */
+    background-color: transparent;
+}
+
+/* Ajustes adicionais para garantir que as setas não se movam */
+.navegacao button {
+    position: absolute;
+    /* Posicionamento absoluto para mais controle */
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.navegacao .anterior {
+    left: calc(5% - 30px);
+    /* Ajuste conforme necessário, usando calc() para posição precisa */
+}
+
+.navegacao .proxima {
+    right: calc(5% - 30px);
+    /* Ajuste conforme necessário */
+}
+
+/* Posiciona as setas fora da imagem principal */
+.anterior {
+    margin-left: -50px;
+    /* Ajuste conforme necessário */
+}
+
+.proxima {
+    margin-right: -50px;
+    /* Ajuste conforme necessário */
+}
+
+.miniaturas {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 20px;
+    /* Espaço entre a imagem principal e as miniaturas */
+}
+
+.miniaturas img.ativa {
+    border: 2px solid #FF5F6D;
+    /* Cor de destaque */
+    box-shadow: 0 0 8px #FF5F6D;
+    /* Sombra leve */
+}
+
+/* Adiciona os estilos para o container das miniaturas */
+.miniaturas-container {
+    display: flex;
+    overflow-x: auto;
+    white-space: nowrap;
+    justify-content: left;
+    /* Centraliza os itens (miniaturas) horizontalmente */
+    gap: 10px;
+    padding: 10px 0;
+}
+
+.galeria-centralizada .miniaturas-container {
+    justify-content: center;
+}
+
+#galeria2 .miniaturas-container {
+    justify-content: center;
+}
+
+.miniaturas img {
+    display: inline-block;
+    width: 80px;
+    height: auto;
+    margin-right: 8px;
+    cursor: pointer;
+}
+
+.navegacao {
+    text-align: center;
+    margin-top: 10px;
+}
+
+.navegacao button {
+    background-color: transparent;
+    border: none;
+    color: white;
+    font-size: 24px;
+    cursor: pointer;
+    outline: none;
+}
+
+.imagem-container {
+    text-align: center;
+}
+
+.anterior,
+.proxima {
+    font-size: 50px;
+    /* Tamanho aumentado das setas */
+    cursor: pointer;
+    color: white;
+    /* Cor da seta */
+    background-color: transparent;
+    border: none;
+    padding: 10px;
+    /* Adicionado para aumentar a área clicável sem alterar o ícone em si */
+}
+
+/* Corrige a posição das setas para acomodar o novo tamanho */
+.anterior {
+    margin-left: -50px;
+    /* Ajuste conforme necessário */
+}
+
+.proxima {
+    margin-right: -50px;
+    /* Ajuste conforme necessário */
+}
+
+.fechar {
+    position: absolute;
+    top: 15px;
+    right: 35px;
+    color: #fff;
+    font-size: 40px;
+    font-weight: bold;
+    cursor: pointer;
+    background-color: rgba(0, 0, 0, 0.6);
+    /* Fundo semi-transparente */
+    border-radius: 50%;
+    /* Círculo */
+    width: 40px;
+    /* Tamanho */
+    height: 40px;
+    /* Tamanho */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+/* ESTILO DO FORMULARIO*/
+
+section.formulario {
+    padding: 40px 5%;
+}
+
+section .titulo {
+    align-items: center;
+}
+
+
+
+form {
+    max-width: 900px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    gap: 25px;
+    margin-top: 10px;
+}
+
+.formulario .interface .flex {
+    display: flex;
+    /* Garante que flexbox está sendo usado */
+    justify-content: center;
+    /* Centraliza horizontalmente */
+    align-items: center;
+    /* Centraliza verticalmente */
+    min-height: 60vh;
+    /* Faz com que o contêiner tenha, no mínimo, a altura total da tela */
+}
+
+/* Opicional: Ajusta o container para ter uma largura máxima e ser centralizado horizontalmente, isso já deve estar funcionando com as classes do Tailwind CSS */
+.formulario .interface .container {
+    max-width: 350px;
+    /* Ou qualquer outra largura preferida */
+    margin: 0 auto;
+    /* Centraliza horizontalmente se necessário */
+}
+
+.form-container {
+    width: 400px;
+    background: linear-gradient(#212121, #212121) padding-box,
+        linear-gradient(145deg, transparent 35%, #FF5F6D, #FFC371) border-box;
+    border: 2px solid transparent;
+    padding: 32px 24px;
+    font-size: 14px;
+    font-family: inherit;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    box-sizing: border-box;
+    border-radius: 16px;
+    background-size: 200% 100%;
+    animation: gradient 5s ease infinite;
+}
+
+@keyframes gradient {
+    0% {
+        background-position: 0% 50%;
+    }
+
+    50% {
+        background-position: 100% 50%;
+    }
+
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+.form-container button:active {
+    scale: 0.95;
+}
+
+.form-container .form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.form-container .form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+}
+
+.form-container .form-group label {
+    display: block;
+    margin-bottom: 5px;
+    color: #717171;
+    font-weight: 600;
+    font-size: 12px;
+}
+
+.form-container .form-group input {
+    width: 100%;
+    padding: 12px 16px;
+    border-radius: 8px;
+    color: #fff;
+    font-family: inherit;
+    background-color: transparent;
+    border: 1px solid #414141;
+}
+
+.form-container .form-group textarea {
+    width: 100%;
+    padding: 30px 20px;
+    border-radius: 8px;
+    resize: none;
+    color: #fff;
+    height: 96px;
+    border: 1px solid #414141;
+    background-color: transparent;
+    font-family: inherit;
+}
+
+.form-container .form-group input::placeholder {
+    opacity: 0.5;
+}
+
+.form-container .form-group input:focus {
+    outline: none;
+    border-color: #FF5F6D;
+}
+
+.form-container .form-group textarea:focus {
+    outline: none;
+    border-color: #FF5F6D;
+}
+
+.form-container .form-submit-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    /* Ajuste para ocupar a largura total do container */
+    padding: 20px;
+    /* Aumente o padding para fazer o botão maior */
+    font-size: 20px;
+    /* Aumente o tamanho da fonte para tornar o texto mais visível */
+    background: #313131;
+    border: 1px solid #414141;
+    color: white;
+    font-weight: bold;
+    /* Opcional: altere a cor do texto se necessário */
+    cursor: pointer;
+    border-radius: 8px;
+    /* Ajuste o border-radius se desejar bordas mais arredondadas */
+    transition: background-color 0.3s ease;
+    /* Adiciona uma transição suave ao mudar de cor */
+}
+
+.form-container .form-submit-btn:hover {
+    background-color: #ffffff;
+    /* Altera a cor de fundo ao passar o mouse */
+    border-color:#FF5F6D;
+    color: #000000;
+    font-weight: bold;
+    /* Opcional: altere a cor do texto ao passar o mouse */
+}
+
+
+
+
+/*ESTILO DO RODAPÉ*/
+
+footer {
+    padding: 40px 4%;
+    box-shadow: 0 0 40px 10px #ffffff1d;
+}
+
+footer .flex {
+    justify-content: space-between;
+}
+
+footer .line-footer {
+    padding: 20px 0;
+}
+
+.borda {
+    border-top: 2px solid #B71515;
+}
+
+footer .line-footer p i {
+    color: #740808;
+    font-size: 25px;
+}
+
+footer .line-footer p a {
+    color: #fff;
+    font-size: 18px;
+}
+
+.minha-imagem {
+    background: none;
+}
+
+.copyright {
+    font-size: 14px;
+    color: #888;
+}
+
+.copyright p {
+    margin: 0;
+}
+
+
+
+header .switch {
+    align-items: center;
+}
+
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 60px;
+    height: 34px;
+}
+
+.switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+/* Estilos básicos para o toggle switch */
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 90px;
+    /* Largura do switch */
+    height: 34px;
+    /* Altura do switch */
+}
+
+.switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+/* Estilo do slider */
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(to right, #4285ef, #0c3e8d, #04152f);
+    transition: .4s;
+    border-radius: 34px;
+}
+
+/* Estilo do slider antes do clique (Modo Claro) */
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 26px;
+    width: 26px;
+    left: 4px;
+    bottom: 4px;
+    background-color: white;
+    transition: .5s;
+    border-radius: 50%;
+    background-image: white;
+    /* Degradê azul */
+}
+
+/* Estilo do slider depois do clique (Modo Escuro) */
+.slider:after {
+    content: "";
+    position: absolute;
+    height: 26px;
+    width: 26px;
+    right: 4px;
+    bottom: 4px;
+    background-color: white;
+    transition: .4s;
+    border-radius: 50%;
+    background-image: white;
+    opacity: 0;
+    visibility: hidden;
+}
+
+/* Muda o fundo do switch ao ativar */
+input:checked+.slider {
+    background: linear-gradient(to right, #ffd466, #ffb700, #ff820a);
+}
+
+/* Move o slider para a direita ao ativar */
+input:checked+.slider:before {
+    transform: translateX(56px);
+}
+
+/* Mostra o degradê laranja quando no modo escuro */
+input:checked+.slider:after {
+    opacity: 1;
+    visibility: visible;
+}
+
+/* Rounded slider */
+.slider.round {
+    border-radius: 34px;
+}
+
+.slider.round:before {
+    border-radius: 50%;
+}
+
+.theme-switch {
+    --toggle-size: 20px;
+    /* Tamanho base do toggle, impacta no dimensionamento geral */
+    --container-width: 4.5em;
+    /* Largura do contêiner */
+    --container-height: 2em;
+    /* Altura do contêiner */
+    --container-radius: 10em;
+    /* Raio da borda do contêiner */
+    /* radius 0 - minecraft mode :) */
+    --container-light-bg: #3D7EAE;
+    --container-night-bg: #1D1F2C;
+    --circle-container-diameter: 2.5em;
+    /* Diâmetro do contêiner do círculo (sol/lua) */
+    --sun-moon-diameter: 1.8em;
+    /* Diâmetro do sol e da lua */
+    --sun-bg: #ECCA2F;
+    --moon-bg: #C4C9D1;
+    --spot-color: #959DB1;
+    --circle-container-offset: calc((var(--circle-container-diameter) - var(--container-height)) / 2 * -1);
+    --stars-color: #fff;
+    --clouds-color: #F3FDFF;
+    --back-clouds-color: #AACADF;
+    --transition: .5s cubic-bezier(0, -0.02, 0.4, 1.25);
+    --circle-transition: .3s cubic-bezier(0, -0.02, 0.35, 1.17);
+}
+
+.theme-switch,
+.theme-switch *,
+.theme-switch *::before,
+.theme-switch *::after {
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-size: var(--toggle-size);
+}
+
+.theme-switch__container {
+    width: var(--container-width);
+    height: var(--container-height);
+    background-color: var(--container-light-bg);
+    border-radius: var(--container-radius);
+    overflow: hidden;
+    cursor: pointer;
+    -webkit-box-shadow: 0em -0.062em 0.062em rgba(0, 0, 0, 0.25), 0em 0.062em 0.125em rgba(255, 255, 255, 0.94);
+    box-shadow: 0em -0.062em 0.062em rgba(0, 0, 0, 0.25), 0em 0.062em 0.125em rgba(255, 255, 255, 0.94);
+    -webkit-transition: var(--transition);
+    -o-transition: var(--transition);
+    transition: var(--transition);
+    position: relative;
+}
+
+.theme-switch__container::before {
+    content: "";
+    position: absolute;
+    z-index: 1;
+    inset: 0;
+    -webkit-box-shadow: 0em 0.05em 0.187em rgba(0, 0, 0, 0.25) inset, 0em 0.05em 0.187em rgba(0, 0, 0, 0.25) inset;
+    box-shadow: 0em 0.05em 0.187em rgba(0, 0, 0, 0.25) inset, 0em 0.05em 0.187em rgba(0, 0, 0, 0.25) inset;
+    border-radius: var(--container-radius)
+}
+
+.theme-switch__checkbox {
+    display: none;
+}
+
+.theme-switch__circle-container {
+    width: var(--circle-container-diameter);
+    height: var(--circle-container-diameter);
+    background-color: rgba(255, 255, 255, 0.1);
+    position: absolute;
+    left: var(--circle-container-offset);
+    top: var(--circle-container-offset);
+    border-radius: var(--container-radius);
+    -webkit-box-shadow: inset 0 0 0 3.375em rgba(255, 255, 255, 0.1), inset 0 0 0 3.375em rgba(255, 255, 255, 0.1), 0 0 0 0.625em rgba(255, 255, 255, 0.1), 0 0 0 1.25em rgba(255, 255, 255, 0.1);
+    box-shadow: inset 0 0 0 3.375em rgba(255, 255, 255, 0.1), inset 0 0 0 3.375em rgba(255, 255, 255, 0.1), 0 0 0 0.625em rgba(255, 255, 255, 0.1), 0 0 0 1.25em rgba(255, 255, 255, 0.1);
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-transition: var(--circle-transition);
+    -o-transition: var(--circle-transition);
+    transition: var(--circle-transition);
+    pointer-events: none;
+}
+
+.theme-switch__sun-moon-container {
+    pointer-events: auto;
+    position: relative;
+    z-index: 2;
+    width: var(--sun-moon-diameter);
+    height: var(--sun-moon-diameter);
+    margin: auto;
+    border-radius: var(--container-radius);
+    background-color: var(--sun-bg);
+    -webkit-box-shadow: 0.062em 0.062em 0.062em 0em rgba(254, 255, 239, 0.61) inset, 0em -0.062em 0.062em 0em #a1872a inset;
+    box-shadow: 0.062em 0.062em 0.062em 0em rgba(254, 255, 239, 0.61) inset, 0em -0.062em 0.062em 0em #a1872a inset;
+    -webkit-filter: drop-shadow(0.062em 0.125em 0.125em rgba(0, 0, 0, 0.25)) drop-shadow(0em 0.062em 0.125em rgba(0, 0, 0, 0.25));
+    filter: drop-shadow(0.062em 0.125em 0.125em rgba(0, 0, 0, 0.25)) drop-shadow(0em 0.062em 0.125em rgba(0, 0, 0, 0.25));
+    overflow: hidden;
+    -webkit-transition: var(--transition);
+    -o-transition: var(--transition);
+    transition: var(--transition);
+}
+
+.theme-switch__moon {
+    -webkit-transform: translateX(100%);
+    -ms-transform: translateX(100%);
+    transform: translateX(100%);
+    width: 100%;
+    height: 100%;
+    background-color: var(--moon-bg);
+    border-radius: inherit;
+    -webkit-box-shadow: 0.062em 0.062em 0.062em 0em rgba(254, 255, 239, 0.61) inset, 0em -0.062em 0.062em 0em #969696 inset;
+    box-shadow: 0.062em 0.062em 0.062em 0em rgba(254, 255, 239, 0.61) inset, 0em -0.062em 0.062em 0em #969696 inset;
+    -webkit-transition: var(--transition);
+    -o-transition: var(--transition);
+    transition: var(--transition);
+    position: relative;
+}
+
+.theme-switch__spot {
+    position: absolute;
+    top: 0.75em;
+    left: 0.312em;
+    width: 0.75em;
+    height: 0.75em;
+    border-radius: var(--container-radius);
+    background-color: var(--spot-color);
+    -webkit-box-shadow: 0em 0.0312em 0.062em rgba(0, 0, 0, 0.25) inset;
+    box-shadow: 0em 0.0312em 0.062em rgba(0, 0, 0, 0.25) inset;
+}
+
+.theme-switch__spot:nth-of-type(2) {
+    width: 0.375em;
+    height: 0.375em;
+    top: 0.937em;
+    left: 1.375em;
+}
+
+.theme-switch__spot:nth-last-of-type(3) {
+    width: 0.25em;
+    height: 0.25em;
+    top: 0.312em;
+    left: 0.812em;
+}
+
+.theme-switch__clouds {
+    width: 1.25em;
+    height: 1.25em;
+    background-color: var(--clouds-color);
+    border-radius: var(--container-radius);
+    position: absolute;
+    bottom: -0.625em;
+    left: 0.312em;
+    -webkit-box-shadow: 0.937em 0.312em var(--clouds-color), -0.312em -0.312em var(--back-clouds-color), 1.437em 0.375em var(--clouds-color), 0.5em -0.125em var(--back-clouds-color), 2.187em 0 var(--clouds-color), 1.25em -0.062em var(--back-clouds-color), 2.937em 0.312em var(--clouds-color), 2em -0.312em var(--back-clouds-color), 3.625em -0.062em var(--clouds-color), 2.625em 0em var(--back-clouds-color), 4.5em -0.312em var(--clouds-color), 3.375em -0.437em var(--back-clouds-color), 4.625em -1.75em 0 0.437em var(--clouds-color), 4em -0.625em var(--back-clouds-color), 4.125em -2.125em 0 0.437em var(--back-clouds-color);
+    box-shadow: 0.937em 0.312em var(--clouds-color), -0.312em -0.312em var(--back-clouds-color), 1.437em 0.375em var(--clouds-color), 0.5em -0.125em var(--back-clouds-color), 2.187em 0 var(--clouds-color), 1.25em -0.062em var(--back-clouds-color), 2.937em 0.312em var(--clouds-color), 2em -0.312em var(--back-clouds-color), 3.625em -0.062em var(--clouds-color), 2.625em 0em var(--back-clouds-color), 4.5em -0.312em var(--clouds-color), 3.375em -0.437em var(--back-clouds-color), 4.625em -1.75em 0 0.437em var(--clouds-color), 4em -0.625em var(--back-clouds-color), 4.125em -2.125em 0 0.437em var(--back-clouds-color);
+    -webkit-transition: 0.5s cubic-bezier(0, -0.02, 0.4, 1.25);
+    -o-transition: 0.5s cubic-bezier(0, -0.02, 0.4, 1.25);
+    transition: 0.5s cubic-bezier(0, -0.02, 0.4, 1.25);
+}
+
+.theme-switch__stars-container {
+    position: absolute;
+    color: var(--stars-color);
+    top: -100%;
+    left: 0.312em;
+    width: 2.75em;
+    height: auto;
+    -webkit-transition: var(--transition);
+    -o-transition: var(--transition);
+    transition: var(--transition);
+}
+
+/* actions */
+
+.theme-switch__checkbox:checked+.theme-switch__container {
+    background-color: var(--container-night-bg);
+}
+
+.theme-switch__checkbox:checked+.theme-switch__container .theme-switch__circle-container {
+    left: calc(100% - var(--circle-container-offset) - var(--circle-container-diameter));
+}
+
+.theme-switch__checkbox:checked+.theme-switch__container .theme-switch__circle-container:hover {
+    left: calc(100% - var(--circle-container-offset) - var(--circle-container-diameter) - 0.187em)
+}
+
+.theme-switch__circle-container:hover {
+    left: calc(var(--circle-container-offset) + 0.187em);
+}
+
+.theme-switch__checkbox:checked+.theme-switch__container .theme-switch__moon {
+    -webkit-transform: translate(0);
+    -ms-transform: translate(0);
+    transform: translate(0);
+}
+
+.theme-switch__checkbox:checked+.theme-switch__container .theme-switch__clouds {
+    bottom: -4.062em;
+}
+
+.theme-switch__checkbox:checked+.theme-switch__container .theme-switch__stars-container {
+    top: 50%;
+    -webkit-transform: translateY(-50%);
+    -ms-transform: translateY(-50%);
+    transform: translateY(-50%);
+}
+
+ul {
+    list-style: none;
+}
+
+.example-2 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.example-2 .icon-content {
+    margin: 0 10px;
+    position: relative;
+}
+
+.example-2 .icon-content .tooltip {
+    position: absolute;
+    top: -30px;
+    left: 50%;
+    transform: translateX(-50%);
+    color: #fff;
+    padding: 6px 10px;
+    border-radius: 5px;
+    opacity: 0;
+    visibility: hidden;
+    font-size: 14px;
+    transition: all 0.3s ease;
+}
+
+.example-2 .icon-content:hover .tooltip {
+    opacity: 1;
+    visibility: visible;
+    top: -50px;
+}
+
+.example-2 .icon-content a {
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    color: #4d4d4d;
+    background-color: #fff;
+    transition: all 0.3s ease-in-out;
+}
+
+.example-2 .icon-content a:hover {
+    box-shadow: 3px 2px 45px 0px rgb(0 0 0 / 12%);
+}
+
+.example-2 .icon-content a svg {
+    position: relative;
+    z-index: 1;
+    width: 30px;
+    height: 30px;
+}
+
+.example-2 .icon-content a:hover {
+    color: white;
+}
+
+.example-2 .icon-content a .filled {
+    position: absolute;
+    top: auto;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 0;
+    background-color: #000;
+    transition: all 0.3s ease-in-out;
+}
+
+.example-2 .icon-content a:hover .filled {
+    height: 100%;
+}
+
+.example-2 .icon-content a[data-social="linkedin"] .filled,
+.example-2 .icon-content a[data-social="linkedin"]~.tooltip {
+    background-color: #0274b3;
+}
+
+.example-2 .icon-content a[data-social="github"] .filled,
+.example-2 .icon-content a[data-social="github"]~.tooltip {
+    background-color: #24262a;
+}
+
+.example-2 .icon-content a[data-social="instagram"] .filled,
+.example-2 .icon-content a[data-social="instagram"]~.tooltip {
+    background: linear-gradient(45deg,
+            #405de6,
+            #5b51db,
+            #b33ab4,
+            #c135b4,
+            #e1306c,
+            #fd1f1f);
+}
+
+.example-2 .icon-content a[data-social="youtube"] .filled,
+.example-2 .icon-content a[data-social="youtube"]~.tooltip {
+    background-color: #ff0000;
+}
+
+
+/* .success,
+.error {
+    text-align: center;
+}
+
+.success {
+    color: #B71515;
+}
+
+.error {
+    color: #B71515;
+} */
+
+
+@media screen and (max-width:768px) {
+    /*CLASSES GERAIS*/
+
+    .theme-switch {
+        display: none;
+    }
+
+    .flex {
+        flex-direction: column-reverse;
+    }
+
+    h2.titulo {
+        font-size: 30px;
+        line-height: 30px;
+    }
+
+    .btn-abrir-menu {
+        display: block;
+    }
+
+    /*CABEÇALHO8*/
+    .menu-desktop,
+    .btn-contato {
+        display: none;
+    }
+
+    .menu-mobile.btn-abrir-menu~.overlay-menu {
+        display: block;
+    }
+
+    /*TOPO DO SITE*/
+
+    /* ESTILO DO MEU "TRANSFORMANDO IDEIAS EM REALIDADE DIGITAL*/
+
+    #typing-animation {
+        font-size: 24px; /* Reduz o tamanho da fonte para se adequar melhor a telas menores */
+        /* Mantém overflow: hidden; */
+    }
+
+    .typing-cursor {
+        width: 1.5px; /* Reduz a largura do cursor para corresponder ao novo tamanho de fonte */
+        height: 0.9em; /* Ajusta a altura para manter a proporção com o novo tamanho de fonte */
+        /* Mantém vertical-align: bottom; */
+        /* Mantém margin-left: 2px; */
+        /* Mantém animation: blink 11s infinite; */
+    }
+
+    /* Opcionalmente, você pode ajustar a duração da animação para se adequar melhor à experiência do usuário em dispositivos móveis */
+    .typing-cursor {
+        animation: blink 8s infinite; /* Ajusta para uma duração menor, se desejado */
+    }
+
+    section.topo-do-site .flex {
+        gap: 40px;
+    }
+
+    section.topo-do-site {
+        padding: 20px 8%;
+    }
+
+    .topo-do-site h1 {
+        font-size: 25px;
+    }
+
+
+
+    .topo-do-site .img-topo-site img {
+        width: 100%;
+    }
+
+    /*ESPECIALIDADES*/
+
+    section.especialidades {
+        padding: 20px 8%;
+    }
+
+    .especialidades .especialidades-box {
+        gap: 50px;
+    }
+
+    /*SOBRE*/
+
+    section.sobre {
+        padding: 80px 8%;
+    }
+
+    .sobre .flex {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .sobre .txt-sobre h2 {
+        font-size: 24px;
+        /* Diminui o tamanho da fonte do título para telas pequenas */
+    }
+
+    .sobre .txt-sobre p {
+        font-size: 16px;
+        /* Ajusta o tamanho do texto para melhor leitura em dispositivos móveis */
+        line-height: 1.5;
+        /* Aumenta o espaçamento entre linhas para melhorar a legibilidade */
+        letter-spacing: normal;
+        /* Ajusta o espaçamento entre letras */
+        word-spacing: normal;
+        /* Ajusta o espaçamento entre palavras */
+        text-align: left;
+        /* ou 'left' para alinhar o texto à esquerda */
+        text-justify: inter-word;
+        /* Justifica o texto para melhorar a distribuição em linhas */
+    }
+
+    .btn-social button {
+        margin: 0 10px;
+        /* Adiciona espaço entre os botões sociais */
+        width: 40px;
+        /* Ajusta o tamanho dos botões sociais */
+        height: 40px;
+        /* Ajusta o tamanho dos botões sociais */
+        padding: 0;
+        /* Remove o padding padrão para manter o botão proporcional */
+    }
+
+    .btn-social i {
+        font-size: 20px;
+        /* Ajusta o tamanho do ícone dentro do botão */
+    }
+
+    .img-sobre img {
+        width: 100%;
+    }
+
+    /* PORTFÓLIO */
+    section.portfolio {
+        padding: 80px 8%;
+    }
+
+    .img-port {
+        width: 100%;
+        max-width: 360px;
+        margin: 0 auto;
+    }
+
+    section.portfolio .flex {
+        gap: 60px;
+    }
+
+    .galeria img {
+        max-width: 90%;
+        margin-top: 50px;
+    }
+
+    /* Ajusta a posição e tamanho do botão fechar para evitar sobreposição */
+    .galeria .fechar {
+        font-size: 25px;
+        /* Tamanho do ícone */
+        width: 35px;
+        /* Largura do botão */
+        height: 35px;
+        /* Altura do botão */
+        top: 10px;
+        /* Posicionamento superior */
+        right: 10px;
+        /* Posicionamento à direita */
+        padding: 5px;
+        /* Espaçamento interno para facilidade de toque */
+    }
+
+    /* Ajusta a navegação para exibir as setas abaixo da imagem */
+    .galeria .navegacao {
+        flex-direction: row;
+        justify-content: center;
+        position: relative;
+        top: auto;
+        transform: none;
+        margin-top: 20px;
+        /* Espaço entre a imagem e as setas */
+    }
+
+    /* Estiliza as setas para aparecerem uma ao lado da outra abaixo da imagem */
+    .galeria .navegacao .anterior,
+    .galeria .navegacao .proxima {
+        position: relative;
+        margin: 0 10px;
+        /* Espaçamento entre as setas */
+    }
+
+
+    /* Ajustes adicionais para as miniaturas */
+    .miniaturas img {
+        width: 40px;
+        /* Ajusta o tamanho das miniaturas */
+        margin-right: 8px;
+        /* Espaçamento entre miniaturas */
+    }
+
+    /* Adiciona um espaçamento adicional na parte inferior da galeria */
+    .conteudo-galeria {
+        margin-bottom: 50px;
+        /* Espaço extra na parte inferior */
+    }
+
+    .botao {
+        width: 10em; /* Permite que o botão se ajuste ao conteúdo */
+        padding: 0.60em 2em; /* Ajusta o padding para um tamanho mais adequado */
+        margin: 20px auto 30px; /* Aumenta o espaço abaixo do botão para evitar sobreposição */
+    }
+
+    /*FORMULARIO*/
+
+    .form-container {
+        width: 100%; /* Ajusta para a largura total da tela */
+        padding: 20px; /* Reduz o padding para se adaptar a telas menores */
+    }
+
+    .formulario .interface .container,
+    form {
+        max-width: 100%; /* Permite que o formulário se expanda até a borda da tela */
+        margin: 0 20px; /* Adiciona uma margem pequena nas laterais para evitar que o formulário toque as bordas */
+    }
+
+    section.formulario {
+        padding: 20px; /* Ajusta o padding para manter consistência */
+    }
+
+    .formulario .interface .flex {
+        flex-direction: column; /* Empilha os elementos verticalmente para melhor utilização do espaço */
+    }
+
+    .form-container .form-group input,
+    .form-container .form-group textarea {
+        padding: 12px; /* Ajusta o padding para inputs e textareas para melhorar a legibilidade */
+    }
+
+    .form-container .form-submit-btn {
+        padding: 15px; /* Reduz o padding do botão para se adaptar ao novo layout */
+        font-size: 16px; /* Diminui o tamanho da fonte do botão para economizar espaço */
+    }
+
+    /*RODAPÉ*/
+
+    footer .flex {
+        flex-direction: column;
+        gap: 30px;
+    }
+
+    footer .line-footer {
+        text-align: center;
+    }
+
+}
+
+@media only screen 
+  and (min-device-width: 820px) 
+  and (max-device-width: 820px) 
+  and (min-device-height: 1180px) 
+  and (max-device-height: 1180px) 
+  and (orientation: portrait) {
+    /* Ajustes para o "Transformando ideias em realidade digital" no iPad Air */
+    #typing-animation {
+        font-size: 28px; /* Ajusta o tamanho da fonte para se adequar melhor à tela do iPad */
+        
+        /* Mantém overflow: hidden; */
+    }
+
+
+    .txt-topo-site{
+        margin-left: 9em;
+    }
+
+    .typing-cursor {
+        padding: 0.0em;
+        width: 10px; /* Ajusta a largura do cursor para corresponder ao tamanho de fonte ajustado */
+        height: 1em; /* Ajusta a altura para manter a proporção com o tamanho de fonte ajustado */
+        /* Mantém vertical-align: bottom; */
+        
+        /* Mantém animation: blink 11s infinite; */
+    }
+
+    /* Opcionalmente, ajusta a duração da animação */
+    .typing-cursor {
+        animation: blink 6s infinite; /* Ajusta para uma duração que se adeque melhor ao iPad */
+    }
+
+    section.especiliadades {
+        padding: 20px 4%; /* Ajustei o padding para 20px no topo/bottom */
+    }
+
+    section.especiliadades .flex {
+        gap: 30px; /* Ajustei o gap para 30px */
+    }
+
+    .especiliadades .especialidades-box {
+        padding: 20px; /* Ajustei o padding para 20px */
+        margin-top: 25px; /* Ajustei a margem superior para 25px */
+    }
+
+    .especiliadades .especialidades-box i {
+        font-size: 50px; /* Ajustei o tamanho do ícone para 50px */
+    }
+
+    .especiliadades .especialidades-box h3 {
+        font-size: 20px; /* Ajustei o tamanho da fonte para 20px */
+    }
+
+    .titulo {
+        font-weight: bold;
+    }
+
+    .img-port {
+        width: 350px; /* Tamanho reduzido para iPads */
+        height: 300px;
+        transition: 0.5s; /* Transição mais rápida em dispositivos menores */
+        margin-bottom: 20px;
+        
+    }
+
+    .botao {
+        gap: 10px; /* Define um espaçamento interno */
+        padding: 10px; /* Ajusta o padding para ser consistente */
+        position:absolute;
+        margin: -75% 10px 10px;
+        display: block; /* Garante que o botão seja tratado como um bloco, facilitando o alinhamento */
+    }
+
+    .galeria {
+        display: flex; /* Alterado de 'none' para 'flex' para tornar visível */
+        flex-direction: column; /* Organiza os itens verticalmente */
+        justify-content: center; /* Centraliza verticalmente no espaço disponível */
+        align-items: center; /* Centraliza horizontalmente */
+        padding: 20px 0; /* Ajusta o espaçamento superior e inferior */
+        
+    }
+
+    .conteudo-galeria {
+        width: 90%; /* Ajusta para a largura do conteúdo ser um pouco menor que a tela */
+        margin: 5% auto; /* Mantém o centro alinhado mas com menos margem */
+    }
+
+    .galeria img {
+        max-width: 100%; /* Ajusta a imagem para não ultrapassar a largura da tela */
+        height: auto; /* Mantém a proporção da imagem */
+    }
+
+     /* Considerando a orientação retrato e o tamanho específico, ajusta os componentes da galeria */
+     .miniaturas-container {
+        overflow-y: auto; /* Permite rolagem vertical para as miniaturas, se necessário */
+        flex-wrap: nowrap; /* Mantém as miniaturas em uma única linha */
+        justify-content: space-around; /* Distribui espaço uniformemente ao redor das miniaturas */
+        padding: 10px; /* Adiciona um pouco de espaço ao redor */
+    }
+
+    .miniaturas img {
+        width: 60px; /* Reduz o tamanho das miniaturas para se encaixarem melhor na tela */
+        height: auto; /* Mantém a proporção da imagem */
+    }
+
+    .anterior, .proxima {
+        font-size: 30px; /* Ajusta o tamanho das setas para serem mais visíveis */
+    }
+
+}
+
