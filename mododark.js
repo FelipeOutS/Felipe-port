@@ -6,8 +6,8 @@ document.addEventListener('DOMContentLoaded', () => {
     // Atualiza os ícones do tema, logos e atributos.
     const updateTheme = (isDark) => {
         document.body.setAttribute('data-theme', isDark ? 'dark' : 'light');
-        headerLogo.src = isDark ? 'https://github.com/FelipeOut/imgport/blob/main/logositemododark.png?raw=true' : 'https://github.com/FelipeOut/imgport/blob/main/logositemodolight.png?raw=true';
-        footerLogo.src = isDark ? 'https://github.com/FelipeOut/imgport/blob/main/logositemododark.png?raw=true' : 'https://github.com/FelipeOut/imgport/blob/main/logositemodolight.png?raw=true';
+        headerLogo.src = isDark ? 'img/logositemododark.png' : 'img/logositemodolight.png';
+        footerLogo.src = isDark ? 'img/logositemododark.png' : 'img/logositemodolight.png';
     };
 
     // Evento de alternância do tema
